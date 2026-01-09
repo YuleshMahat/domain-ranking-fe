@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header id="navbar">
     <div class="nav-content">
       <div class="logo-section">
         <div class="logo-icon">
@@ -29,7 +29,7 @@
 </template>
 
 <style scoped>
-.navbar {
+#navbar {
   background: #1a1f36; /* Deep navy to match the tags */
   color: white;
   padding: 1rem 2rem;

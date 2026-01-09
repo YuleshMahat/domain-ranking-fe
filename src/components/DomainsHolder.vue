@@ -43,7 +43,7 @@ const props = defineProps({
         @keyup.enter="addDomain"
         placeholder="Enter domain (e.g. google.com)"
       />
-      <button @click="addDomain" class="add-btn">Add</button>
+      <button @click="addDomain" class="btn-add">Add</button>
     </div>
 
     <button

@@ -90,7 +90,6 @@ function renderChart() {
       },
       scales: {
         y: {
-          reverse: true,
           title: { display: true, text: 'Rank' },
         },
         x: {
