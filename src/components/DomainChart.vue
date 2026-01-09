@@ -66,6 +66,7 @@ function renderChart() {
         (date) => rankings.find((r) => r.date === date)?.rank ?? null
       ),
       borderWidth: 2,
+      tension: 0.3,
       spanGaps: true,
       borderColor: colors[index % colors.length],
       backgroundColor: colors[index % colors.length],
