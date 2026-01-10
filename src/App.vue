@@ -5,6 +5,7 @@ import Nav from './components/Nav.vue';
 import type { RankingData, Rankings } from './types/api';
 import { getRankings } from './features/domain/domainApi';
 import DomainChart from './components/DomainChart.vue';
+import { createToast } from 'mosha-vue-toastify';
 
 const rankingData = ref<RankingData>({});
 
@@ -13,6 +14,18 @@ const loading = ref<boolean>(false);
 const handleSeeRanking = async (domains: Rankings) => {
   loading.value = true;
   const response = await getRankings(domains);
+  console.log(response.message);
+  if (response.status === 'error') {
+    createToast(response.message, {
+      type: 'danger',
+      timeout: 5000,
+      position: 'top-right',
+      showIcon: true,
+    });
+    loading.value = false;
+    return;
+  }
+
   loading.value = false;
   if (response?.data) rankingData.value = response.data;
 };
