@@ -1,4 +1,4 @@
-# 📊 Domain Ranking Comparison
+# 📊 Domain Ranking Comparison - Frontend
 
 This is the front-end part of a full-stack application that visualizes domain ranking changes over time. Perfect for quick SEO insights without the hassle of authentication.
 
