@@ -1,26 +1,20 @@
 import axios from 'axios';
 import type { ApiProcessor, ApiResponse } from '../types/api';
+import { errorHandler } from './errorHandler';
 
 export const apiUrl = import.meta.env.VITE_API_URL;
 
-export const apiProcessor = async ({
-  method,
-  url,
-  data,
-}: ApiProcessor): Promise<ApiResponse> => {
-  console.log(apiUrl);
+export const apiProcessor = async ({ method, url, data }: ApiProcessor) => {
   try {
-    const result = await axios({
+    const result: ApiResponse = await axios({
       method: method,
       url: url,
       data: data ? data : {},
     });
-
-    console.log('The result obtained is: ', result);
-
     return result.data;
-  } catch (error) {
-    console.log(error);
-    return { message: 'Internal Server error', status: 'error' };
+  } catch (error: any) {
+    const errorObj = errorHandler(error);
+    console.log('Error object is', errorObj);
+    return errorObj;
   }
 };

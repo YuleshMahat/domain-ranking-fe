@@ -14,14 +14,9 @@ const loading = ref<boolean>(false);
 const handleSeeRanking = async (domains: Rankings) => {
   loading.value = true;
   const response = await getRankings(domains);
-  console.log(response.message);
   if (response.status === 'error') {
-    createToast(response.message, {
-      type: 'danger',
-      timeout: 5000,
-      position: 'top-right',
-      showIcon: true,
-    });
+    createToast(response.message + response.invalidDomains, { type: 'danger' });
+
     loading.value = false;
     return;
   }
