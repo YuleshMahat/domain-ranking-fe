@@ -7,7 +7,6 @@ This is the front-end part of a full-stack application that visualizes domain ra
 ## ✨ Features
 
 - **Visual Comparison**: Compare multiple domain rankings through interactive line graphs
-- **Real-time Data**: Get instant ranking insights with a simple interface
 - **No Authentication Required**: Jump right in without signing up
 
 ---
