@@ -14,7 +14,6 @@ export const apiProcessor = async ({ method, url, data }: ApiProcessor) => {
     return result.data;
   } catch (error: any) {
     const errorObj = errorHandler(error);
-    console.log('Error object is', errorObj);
     return errorObj;
   }
 };

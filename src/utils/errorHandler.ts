@@ -5,5 +5,7 @@ export const errorHandler = (error: any) => {
       status: 'error',
       invalidDomains: error?.response?.data?.invalidDomains,
     };
-  } else return { message: error.message, status: 'error' };
+  } else if (error?.status == 404)
+    return { message: error?.response?.data?.message, status: 'error' };
+  else return { message: error.message, status: 'error' };
 };
